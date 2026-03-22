@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huzefa Shaikh — Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Stack+Sans+Headline:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- DRAWER OVERLAY -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <span class="drawer-logo"><b>Port</b>folio</span>
+    <button class="drawer-close" onclick="closeDrawer()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="#about" class="drawer-link" onclick="closeDrawer()">About <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="#skills" class="drawer-link" onclick="closeDrawer()">Skills <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="#services" class="drawer-link" onclick="closeDrawer()">Services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="#projects" class="drawer-link" onclick="closeDrawer()">Projects <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="#experience" class="drawer-link" onclick="closeDrawer()">Experience <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="#contact" class="drawer-link" onclick="closeDrawer()">Contact <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </nav>
+  <div class="drawer-foot">
+    <a href="#contact" class="drawer-cv" onclick="closeDrawer()">
+      Let's Connect
+      <svg style="display:inline;vertical-align:middle;margin-left:6px" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- NAV -->
+<header>
+  <nav>
+    <a href="#home" class="nav-logo">
+      <img src="user.png" alt="Huzefa">
+      <span class="nav-logo-text"><b>Port</b>folio</span>
+    </a>
+    <div class="nav-right">
+      <a href="assets/Huzefa_Shaikh_Resume_3-26.pdf" class="nav-cv" download">Download CV <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+      <button class="menu-btn" id="menuBtn" onclick="toggleDrawer()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <h1>HUZEFA SHAIKH<span class="h1-sub">Full Stack Developer</span></h1>
+    <p class="hero-sub">I build <span>scalable</span> web apps, end-to-end.</p>
+    <p class="hero-desc">Passionate about crafting clean, performant, and user-friendly digital experiences. From REST APIs to pixel-perfect UIs &mdash; I love every layer of the stack.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-fill">View Projects <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+  </div>
+  <div class="hero-right"><img src="assets/user1.png" alt="Huzefa character"></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span>React<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>Node.js<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>MongoDB<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>Express<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>JavaScript<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>HTML &amp; CSS<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>REST APIs<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>Git &amp; GitHub<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>Full Stack Dev<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>Clean Code<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>React<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>Node.js<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>MongoDB<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>Express<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>JavaScript<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>HTML &amp; CSS<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>REST APIs<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>Git &amp; GitHub<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>Full Stack Dev<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+    <span>Clean Code<svg class="marquee-sep" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.3"/></svg></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about">
+    <div class="about-img-wrap reveal-left">
+      <img src="assets/user2.png" alt="Huzefa drinking coffee">
+      <div class="about-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        Fueled by coffee
+      </div>
+    </div>
+    <div class="about-content reveal-right">
+      <span class="section-label">Who I Am</span>
+      <h2 class="section-title">Building the web,<br>one commit at a time.</h2>
+      <p class="about-p">I'm Huzefa &mdash; a Full Stack Developer based in India. I started coding through hands-on internship experience and fell in love with turning ideas into real, working products.</p>
+      <p class="about-p">I focus on writing maintainable, scalable code and love learning new tools. Whether it's designing a clean UI or architecting a backend system, I care about every detail.</p>
+      <div class="about-tags">
+        <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>Problem Solver</span>
+        <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/><path d="M19 15l.75 2.25L22 18l-2.25.75L19 21l-.75-2.25L16 18l2.25-.75z"/></svg>Clean Code</span>
+        <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>Open Source Curious</span>
+        <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>Always Learning</span>
+        <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>Night Owl Coder</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skills-outer">
+    <div class="skills-left reveal-left">
+      <span class="section-label">My Toolkit</span>
+      <h2 class="section-title">Skills &amp;<br>Technologies</h2>
+      <p class="skills-desc">A curated stack of tools I use to build modern, full-stack applications &mdash; from UI to database.</p>
+      <div class="s-tabs">
+        <button class="s-tab active" data-panel="fe">Frontend</button>
+        <button class="s-tab" data-panel="be">Backend</button>
+        <button class="s-tab" data-panel="tl">Tools</button>
+      </div>
+      <div class="s-tab-panel active" id="fe">
+        <div class="skill-grid">
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"></div><div class="sk-meta"><div class="sk-name">HTML5</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="95"></div></div></div><span class="sk-lvl">95%</span></div>
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"></div><div class="sk-meta"><div class="sk-name">CSS3</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="90"></div></div></div><span class="sk-lvl">90%</span></div>
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"></div><div class="sk-meta"><div class="sk-name">JavaScript</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="88"></div></div></div><span class="sk-lvl">88%</span></div>
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></div><div class="sk-meta"><div class="sk-name">React</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="82"></div></div></div><span class="sk-lvl">82%</span></div>
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"></div><div class="sk-meta"><div class="sk-name">Tailwind CSS</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="80"></div></div></div><span class="sk-lvl">80%</span></div>
+          <div class="skill-item"><div class="sk-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><div class="sk-meta"><div class="sk-name">Responsive Design</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="92"></div></div></div><span class="sk-lvl">92%</span></div>
+        </div>
+      </div>
+      <div class="s-tab-panel" id="be">
+        <div class="skill-grid">
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node"></div><div class="sk-meta"><div class="sk-name">Node.js</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="85"></div></div></div><span class="sk-lvl">85%</span></div>
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express"></div><div class="sk-meta"><div class="sk-name">Express.js</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="82"></div></div></div><span class="sk-lvl">82%</span></div>
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="Mongo"></div><div class="sk-meta"><div class="sk-name">MongoDB</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="78"></div></div></div><span class="sk-lvl">78%</span></div>
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div><div class="sk-meta"><div class="sk-name">Python</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="75"></div></div></div><span class="sk-lvl">75%</span></div>
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"></div><div class="sk-meta"><div class="sk-name">MySQL</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="70"></div></div></div><span class="sk-lvl">70%</span></div>
+          <div class="skill-item"><div class="sk-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg></div><div class="sk-meta"><div class="sk-name">REST API Design</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="84"></div></div></div><span class="sk-lvl">84%</span></div>
+        </div>
+      </div>
+      <div class="s-tab-panel" id="tl">
+        <div class="skill-grid">
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div><div class="sk-meta"><div class="sk-name">Git</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="90"></div></div></div><span class="sk-lvl">90%</span></div>
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"></div><div class="sk-meta"><div class="sk-name">GitHub</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="88"></div></div></div><span class="sk-lvl">88%</span></div>
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"></div><div class="sk-meta"><div class="sk-name">VS Code</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="95"></div></div></div><span class="sk-lvl">95%</span></div>
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman"></div><div class="sk-meta"><div class="sk-name">Postman</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="80"></div></div></div><span class="sk-lvl">80%</span></div>
+          <div class="skill-item"><div class="sk-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"></div><div class="sk-meta"><div class="sk-name">Figma</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="72"></div></div></div><span class="sk-lvl">72%</span></div>
+          <div class="skill-item"><div class="sk-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="sk-meta"><div class="sk-name">Terminal / CLI</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="85"></div></div></div><span class="sk-lvl">85%</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="skills-char reveal-right"><img src="assets/user3.png" alt="Developer character"></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<div class="services-outer" id="services">
+  <div class="services-inner">
+    <div class="services-head reveal">
+      <span class="section-label">What I Do</span>
+      <h2 class="section-title">Services I Offer</h2>
+    </div>
+    <div class="svc-scroll-outer reveal">
+      <div class="svc-scroll-wrap" id="svcScroll">
+        <div class="svc-list" id="svcList">
+          <!-- card 1 -->
+          <div class="svc-card active" onclick="toggleSvc(this)">
+            <div class="svc-card-head">
+              <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+              <div class="svc-info"><div class="svc-name">UI/UX Development</div><div class="svc-sub">Responsive, accessible interfaces</div></div>
+              <svg class="svc-chevron" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+            <div class="svc-divider"></div>
+            <div class="svc-body">
+              <p class="svc-hint">Click to see what's included</p>
+              <p class="svc-body-desc">Building clean, interactive frontends with modern CSS and React. Pixel-perfect from Figma to code.</p>
+              <ul class="svc-body-pts">
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Component-driven React architecture</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Responsive layouts &amp; mobile-first</li>
+                
+              </ul>
+            </div>
+          </div>
+          <!-- card 2 -->
+          <div class="svc-card" onclick="toggleSvc(this)">
+            <div class="svc-card-head">
+              <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+              <div class="svc-info"><div class="svc-name">Backend Engineering</div><div class="svc-sub">Scalable APIs &amp; database design</div></div>
+              <svg class="svc-chevron" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+            <div class="svc-divider"></div>
+            <div class="svc-body">
+              <p class="svc-hint">Click to see what's included</p>
+              <p class="svc-body-desc">Robust server-side logic, auth systems, and efficient database modeling with Node.js and MongoDB.</p>
+              <ul class="svc-body-pts">
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>RESTful API design &amp; implementation</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>JWT &amp; session-based authentication</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>MongoDB &amp; SQL database modeling</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>MVC architecture &amp; clean patterns</li>
+              </ul>
+            </div>
+          </div>
+          <!-- card 3 -->
+          <div class="svc-card" onclick="toggleSvc(this)">
+            <div class="svc-card-head">
+              <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+              <div class="svc-info"><div class="svc-name">Full Stack Apps</div><div class="svc-sub">End-to-end product development</div></div>
+              <svg class="svc-chevron" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+            <div class="svc-divider"></div>
+            <div class="svc-body">
+              <p class="svc-hint">Click to see what's included</p>
+              <p class="svc-body-desc">From database schema to deployment &mdash; complete MERN stack apps with real-time features.</p>
+              <ul class="svc-body-pts">
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Full MERN stack development</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Real-time features with Socket.IO</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Third-party API integrations</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Deployment &amp; CI/CD basics</li>
+              </ul>
+            </div>
+          </div>
+          <!-- card 4 -->
+          <div class="svc-card" onclick="toggleSvc(this)">
+            <div class="svc-card-head">
+              <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
+              <div class="svc-info"><div class="svc-name">API &amp; Integrations</div><div class="svc-sub">Connecting services seamlessly</div></div>
+              <svg class="svc-chevron" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+            <div class="svc-divider"></div>
+            <div class="svc-body">
+              <p class="svc-hint">Click to see what's included</p>
+              <p class="svc-body-desc">Connecting services, webhooks and third-party APIs. OAuth flows and payment gateways.</p>
+              <ul class="svc-body-pts">
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>REST &amp; GraphQL API consumption</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Webhook setup &amp; event handling</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>OAuth &amp; social auth flows</li>
+              </ul>
+            </div>
+          </div>
+          <!-- card 5 -->
+          <div class="svc-card" onclick="toggleSvc(this)">
+            <div class="svc-card-head">
+              <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+              <div class="svc-info"><div class="svc-name">Code Review &amp; Consulting</div><div class="svc-sub">Audits, refactoring, best practices</div></div>
+              <svg class="svc-chevron" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+            <div class="svc-divider"></div>
+            <div class="svc-body">
+              <p class="svc-hint">Click to see what's included</p>
+              <p class="svc-body-desc">Reviewing codebases, identifying bottlenecks, and architecture improvements.</p>
+              <ul class="svc-body-pts">
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Codebase audit &amp; refactoring</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Performance bottleneck identification</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Technical debt reduction</li>
+              </ul>
+            </div>
+          </div>
+          <!-- card 6 -->
+          <div class="svc-card" onclick="toggleSvc(this)">
+            <div class="svc-card-head">
+              <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+              <div class="svc-info"><div class="svc-name">Deployment &amp; DevOps</div><div class="svc-sub">Hosting, pipelines &amp; environments</div></div>
+              <svg class="svc-chevron" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+            <div class="svc-divider"></div>
+            <div class="svc-body">
+              <p class="svc-hint">Click to see what's included</p>
+              <p class="svc-body-desc">Getting your app live &mdash; cloud hosting, environment setup, and CI/CD pipelines.</p>
+              <ul class="svc-body-pts">
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Cloud hosting (Render, Vercel, Railway)</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>GitHub Actions CI/CD pipelines</li>
+                <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Domain setup &amp; SSL configuration</li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- /svc-list -->
+      </div><!-- /svc-scroll-wrap -->
+      <div class="svc-nav">
+        <div class="svc-dots-wrap" id="svcDots">
+          <div class="svc-dot active" onclick="svcGoTo(0)"></div>
+          <div class="svc-dot" onclick="svcGoTo(1)"></div>
+        </div>
+        <div class="svc-arrows">
+          <button class="svc-arrow" id="svcPrev" onclick="svcSlide(-1)" disabled>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="svc-arrow" id="svcNext" onclick="svcSlide(1)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                
+              </ul>
+            </div></div>
+          </div>
+          <!-- card 2 -->
+
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="projects-outer">
+    <div class="proj-layout">
+      <!-- LEFT: image -->
+      <div class="proj-left reveal-left">
+        <span class="section-label">What I've Built</span>
+        <h2 class="section-title">Featured<br>Projects</h2>
+        <div class="proj-char"><img src="assets/user5.png" alt="Developer reviewing projects"></div>
+        <div class="proj-btns-row" style="margin-top:32px">
+          <button class="btn-fill" onclick="openProjOverlay()">More Projects <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+          <a href="https://github.com/ShaikhHuzefa2005" target="_blank" class="btn-outline"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+        </div>
+      </div>
+      <!-- RIGHT: 3 project cards -->
+      <div class="proj-right reveal-right">
+        <div class="proj-stack">
+          <div class="proj-card">
+            <div class="proj-card-top">
+              <div class="proj-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <div class="proj-links-row"><a href="#" class="proj-link-btn btn-fill" style="padding:5px 12px;font-size:12px;">Live &#x2197;</a><a href="#" class="proj-link-btn btn-outline gh-btn" style="padding:5px 12px;font-size:12px;">GitHub</a></div>
+            </div>
+            <div class="proj-title">MoonChat</div>
+            <p class="proj-desc">Real-time chat app with rooms, live user lists, and message broadcasting using WebSockets.</p>
+            <div class="proj-tag"><span>Node.js</span><span>Socket.IO</span><span>Express</span></div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-card-top">
+              <div class="proj-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <div class="proj-links-row"><a href="#" class="proj-link-btn btn-fill" style="padding:5px 12px;font-size:12px;">Live &#x2197;</a><a href="#" class="proj-link-btn btn-outline gh-btn" style="padding:5px 12px;font-size:12px;">GitHub</a></div>
+            </div>
+            <div class="proj-title">Crypto Tracker</div>
+            <p class="proj-desc">Live cryptocurrency dashboard with chart visualizations, search, and favorites using crypto APIs.</p>
+            <div class="proj-tag"><span>React</span><span>Chart.js</span><span>REST API</span></div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-card-top">
+              <div class="proj-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+              <div class="proj-links-row"><a href="#" class="proj-link-btn btn-fill" style="padding:5px 12px;font-size:12px;">Live &#x2197;</a><a href="#" class="proj-link-btn btn-outline gh-btn" style="padding:5px 12px;font-size:12px;">GitHub</a></div>
+            </div>
+            <div class="proj-title">Task Board</div>
+            <p class="proj-desc">Kanban-style task manager with drag and drop, labels, due dates, and localStorage persistence.</p>
+            <div class="proj-tag"><span>Vanilla JS</span><span>CSS Grid</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS FULL-SCREEN OVERLAY -->
+<div class="proj-overlay" id="projOverlay">
+  <div class="proj-overlay-bg" onclick="closeProjOverlay()"></div>
+  <div class="proj-overlay-panel">
+    <div class="proj-overlay-head">
+      <div class="proj-overlay-title">All Projects</div>
+      <button class="proj-overlay-close" onclick="closeProjOverlay()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="proj-overlay-body" id="projOverlayBody">
+      <!-- Card 1 -->
+      <div class="ov-card" style="animation-delay:.05s">
+        <div class="ov-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="ov-card-name">MoonChat</div>
+        <p class="ov-card-desc">Real-time chat application with multiple rooms, live user presence, and WebSocket-powered message broadcasting. Event-driven Node.js architecture with Socket.IO.</p>
+        <div class="ov-card-tags"><span>Node.js</span><span>Socket.IO</span><span>Express</span><span>HTML/CSS</span></div>
+        <div class="ov-card-links"><a href="#" class="ov-card-link fill">Live &#x2197;</a><a href="https://github.com/ShaikhHuzefa2005" target="_blank" class="ov-card-link">GitHub</a></div>
+      </div>
+      <!-- Card 2 -->
+      <div class="ov-card" style="animation-delay:.10s">
+        <div class="ov-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="ov-card-name">Crypto Tracker</div>
+        <p class="ov-card-desc">Live cryptocurrency price dashboard with interactive Chart.js visualizations, real-time search, and a watchlist system. Consumes public crypto market APIs.</p>
+        <div class="ov-card-tags"><span>React</span><span>Chart.js</span><span>REST API</span><span>CSS</span></div>
+        <div class="ov-card-links"><a href="#" class="ov-card-link fill">Live &#x2197;</a><a href="https://github.com/ShaikhHuzefa2005" target="_blank" class="ov-card-link">GitHub</a></div>
+      </div>
+      <!-- Card 3 -->
+      <div class="ov-card" style="animation-delay:.15s">
+        <div class="ov-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="ov-card-name">Quiz Game</div>
+        <p class="ov-card-desc">Interactive Python quiz engine with score tracking, a countdown timer, and categorized question banks. Modular OOP design with clean separation of concerns.</p>
+        <div class="ov-card-tags"><span>Python</span><span>CLI</span><span>OOP</span></div>
+        <div class="ov-card-links"><a href="#" class="ov-card-link fill">View &#x2197;</a><a href="https://github.com/ShaikhHuzefa2005" target="_blank" class="ov-card-link">GitHub</a></div>
+      </div>
+      <!-- Card 4 -->
+      <div class="ov-card" style="animation-delay:.20s">
+        <div class="ov-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="ov-card-name">DevBlog API</div>
+        <p class="ov-card-desc">RESTful blog backend with JWT authentication, CRUD operations, image upload support, and full MVC pattern. Built with Express and MongoDB.</p>
+        <div class="ov-card-tags"><span>Express</span><span>MongoDB</span><span>JWT</span><span>Node.js</span></div>
+        <div class="ov-card-links"><a href="#" class="ov-card-link fill">Docs &#x2197;</a><a href="https://github.com/ShaikhHuzefa2005" target="_blank" class="ov-card-link">GitHub</a></div>
+      </div>
+      <!-- Card 5 -->
+      <div class="ov-card" style="animation-delay:.25s">
+        <div class="ov-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <div class="ov-card-name">Task Board</div>
+        <p class="ov-card-desc">Zero-dependency Kanban board with drag-and-drop, color labels, due dates, and full localStorage persistence. Pure Vanilla JS with CSS Grid layout.</p>
+        <div class="ov-card-tags"><span>Vanilla JS</span><span>CSS Grid</span><span>LocalStorage</span></div>
+        <div class="ov-card-links"><a href="#" class="ov-card-link fill">Live &#x2197;</a><a href="https://github.com/ShaikhHuzefa2005" target="_blank" class="ov-card-link">GitHub</a></div>
+      </div>
+      <!-- Card 6 -->
+      <div class="ov-card" style="animation-delay:.30s">
+        <div class="ov-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+        <div class="ov-card-name">Weather App</div>
+        <p class="ov-card-desc">Location-based weather forecasting React app with animated weather icons, 5-day forecast, and OpenWeather API integration. Geolocation-powered.</p>
+        <div class="ov-card-tags"><span>React</span><span>OpenWeather API</span><span>Geolocation</span></div>
+        <div class="ov-card-links"><a href="#" class="ov-card-link fill">Live &#x2197;</a><a href="https://github.com/ShaikhHuzefa2005" target="_blank" class="ov-card-link">GitHub</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="exp-outer">
+    <div class="exp-left reveal-left">
+      <span class="section-label">Journey So Far</span>
+      <h2 class="section-title">Work &amp;<br>Education</h2>
+      <div class="tl-svg-wrap" id="tlWrap">
+        <svg class="tl-svg" id="tlSvg" height="400" xmlns="http://www.w3.org/2000/svg">
+          <line class="tl-line-bg" x1="1" y1="0" x2="1" y2="400" stroke-width="2"/>
+          <line class="tl-line-anim" id="tlAnim" x1="1" y1="0" x2="1" y2="400" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <ul class="tl-list" id="tlList">
+          <li class="tl-item" onmouseenter="tlHover(this,true)" onmouseleave="tlHover(this,false)">
+            <div class="tl-dot-col"><div class="tl-dot" id="dot0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div></div>
+            <div class="tl-body"><span class="tl-date">2024</span><div class="tl-title">RogueCodes<span class="tl-title-dot"></span></div><div class="tl-role">Frontend Developer Intern</div><p class="tl-desc">Built responsive React UI components, improved UX for client products, and implemented pixel-perfect designs from Figma mockups.</p></div>
+          </li>
+          <li class="tl-item" onmouseenter="tlHover(this,true)" onmouseleave="tlHover(this,false)">
+            <div class="tl-dot-col"><div class="tl-dot" id="dot1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div></div>
+            <div class="tl-body"><span class="tl-date">Jun 2023 – Aug 2023</span><div class="tl-title">Cognifyz Technologies<span class="tl-title-dot"></span></div><div class="tl-role">Web Development Intern</div><p class="tl-desc">Developed and maintained responsive web applications. Enhanced backend functionality with APIs and databases. Tested, debugged, and enhanced applications.</p></div>
+          </li>
+          <li class="tl-item" onmouseenter="tlHover(this,true)" onmouseleave="tlHover(this,false)">
+            <div class="tl-dot-col"><div class="tl-dot" id="dot2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div></div>
+            <div class="tl-body"><span class="tl-date">2022 – Present</span><div class="tl-title">B.E. / B.Tech — Computer Science<span class="tl-title-dot"></span></div><div class="tl-role">University &middot; India</div><p class="tl-desc">Studying data structures, algorithms, database systems, operating systems, and building projects alongside coursework.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-char reveal-right"><img src="assets/user4.png" alt="Developer character"></div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-outer">
+  <div class="quote-inner">
+    <div class="quote-char reveal-left"><img src="assets/user7.png" alt="Developer thinking"></div>
+    <div class="quote-body reveal-right">
+      <blockquote>&#8220;First, solve the problem.<br>Then, write the code.&#8221;</blockquote>
+      <p class="quote-author">&mdash; A developer&#8217;s north star, always.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-outer">
+    <div class="reveal" style="margin-bottom:40px;"><span class="section-label">Let&#8217;s Talk</span><h2 class="section-title">Get In Touch</h2></div>
+    <div class="contact-layout">
+      <!-- LEFT: biscuit cards -->
+      <div class="contact-left reveal-left">
+        <p class="contact-intro">Whether it&#8217;s a project, an opportunity, or just saying hi &mdash; I&#8217;m always reachable. Pick your platform.</p>
+        <div class="contact-cards">
+          <!-- Email -->
+          <a href="mailto:huzefasadik20@gmail.com" class="biscuit">
+            <div class="biscuit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
+            <div class="biscuit-text"><div class="biscuit-name">Email</div><div class="biscuit-label">huzefasadik20@gmail.com</div></div>
+            <svg class="biscuit-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/ShaikhHuzefa2005" target="_blank" class="biscuit">
+            <div class="biscuit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></div>
+            <div class="biscuit-text"><div class="biscuit-name">GitHub</div><div class="biscuit-label">ShaikhHuzefa2005</div></div>
+            <svg class="biscuit-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/huzefa-shaikh-8b821b325/" target="_blank" class="biscuit">
+            <div class="biscuit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+            <div class="biscuit-text"><div class="biscuit-name">LinkedIn</div><div class="biscuit-label">huzefa-shaikh-8b821b325</div></div>
+            <svg class="biscuit-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://instagram.com/" target="_blank" class="biscuit">
+            <div class="biscuit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+            <div class="biscuit-text"><div class="biscuit-name">Instagram</div><div class="biscuit-label">Add your handle</div></div>
+            <svg class="biscuit-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <!-- Twitter/X -->
+          <a href="https://x.com/0Huzefa_Shaikh" target="_blank" class="biscuit">
+            <div class="biscuit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.261 5.638 5.903-5.638zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
+            <div class="biscuit-text"><div class="biscuit-name">X / Twitter</div><div class="biscuit-label">0Huzefa_Shaikh</div></div>
+            <svg class="biscuit-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <!-- Location (wide) -->
+          <div class="biscuit" style="cursor:default;">
+            <div class="biscuit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="biscuit-text"><div class="biscuit-name">Location</div><div class="biscuit-label">India &middot; Open to Remote &amp; Relocation</div></div>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT: character -->
+      <div class="contact-right reveal-right">
+        <div class="contact-char"><img src="assets/user6.png" alt="Huzefa character"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div><div class="footer-logo"><b>Port</b>folio</div><p class="footer-tag">Huzefa Shaikh &mdash; Full Stack Developer building clean, scalable web applications.</p></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/ShaikhHuzefa2005" target="_blank">GitHub</a></li><li><a href="mailto:huzefasadk20@gmail.com">Email</a></li><li><a href="https://linkedin.com/in/huzefaaasadk" target="_blank">LinkedIn</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2025 Huzefa Shaikh. Crafted with care.</span>
+      <div class="footer-socials">
+        <a href="https://github.com/ShaikhHuzefa2005" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+        <a href="mailto:huzefasadk20@gmail.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* CURSOR */
+const cur=document.getElementById("cursor"),ring=document.getElementById("cursorRing");
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;cur.style.transform="translate("+(mx-5)+"px,"+(my-5)+"px)";});
+(function animR(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.transform="translate("+(rx-18)+"px,"+(ry-18)+"px)";requestAnimationFrame(animR);})();
+document.querySelectorAll("a,button,.proj-card,.svc-card,.biscuit,.skill-item").forEach(el=>{
+  el.addEventListener("mouseenter",()=>document.body.classList.add("hovering"));
+  el.addEventListener("mouseleave",()=>document.body.classList.remove("hovering"));
+});
+
+/* BACK TO TOP */
+const bt=document.getElementById("back-top");
+window.addEventListener("scroll",()=>bt.classList.toggle("show",window.scrollY>300));
+
+/* REVEAL */
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target);}});},{threshold:.1});
+document.querySelectorAll(".reveal,.reveal-left,.reveal-right").forEach(el=>obs.observe(el));
+
+/* DRAWER */
+function toggleDrawer(){
+  const d=document.getElementById("drawer"),o=document.getElementById("drawerOverlay"),b=document.getElementById("menuBtn");
+  const open=d.classList.toggle("open");
+  o.classList.toggle("open",open);
+  b.classList.toggle("open",open);
+  document.body.style.overflow=open?"hidden":"";
+}
+function closeDrawer(){
+  document.getElementById("drawer").classList.remove("open");
+  document.getElementById("drawerOverlay").classList.remove("open");
+  document.getElementById("menuBtn").classList.remove("open");
+  document.body.style.overflow="";
+}
+document.querySelectorAll(".drawer-link").forEach(a=>{
+  a.addEventListener("click",e=>{
+    const href=a.getAttribute("href");
+    if(href&&href.startsWith("#")){
+      e.preventDefault();
+      closeDrawer();
+      setTimeout(()=>{const t=document.querySelector(href);if(t)t.scrollIntoView({behavior:"smooth",block:"start"});},320);
+    }
+  });
+});
+
+/* SKILL TABS */
+document.querySelectorAll(".s-tab").forEach(t=>{
+  t.addEventListener("click",()=>{
+    document.querySelectorAll(".s-tab").forEach(x=>x.classList.remove("active"));
+    document.querySelectorAll(".s-tab-panel").forEach(x=>x.classList.remove("active"));
+    t.classList.add("active");
+    const panel=document.getElementById(t.dataset.panel);
+    panel.classList.add("active");
+    setTimeout(()=>animBars(panel),60);
+  });
+});
+function animBars(panel){panel.querySelectorAll(".sk-bar").forEach(b=>{b.style.width=b.dataset.w+"%";});}
+new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){animBars(document.querySelector(".s-tab-panel.active"));}});},{threshold:.2}).observe(document.getElementById("skills"));
+
+/* SERVICES — grid-based paging, show 3 cards at a time */
+function toggleSvc(card){
+  const wasActive=card.classList.contains("active");
+  document.querySelectorAll(".svc-card").forEach(c=>c.classList.remove("active"));
+  if(!wasActive) card.classList.add("active");
+}
+
+let svcPage=0;
+function getSvcPerPage(){return window.innerWidth<=960?1:3;}
+function svcSlide(dir){
+  const maxPage=Math.ceil(document.querySelectorAll(".svc-card").length/getSvcPerPage())-1;
+  svcPage=Math.max(0,Math.min(maxPage,svcPage+dir));
+  renderSvcSlide();
+}
+function svcGoTo(page){svcPage=page;renderSvcSlide();}
+function renderSvcSlide(){
+  const perPage=getSvcPerPage();
+  const cards=Array.from(document.querySelectorAll(".svc-card"));
+  const maxPage=Math.ceil(cards.length/perPage)-1;
+  const start=svcPage*perPage;
+  cards.forEach((c,i)=>{
+    c.style.display=(i>=start&&i<start+perPage)?"flex":"none";
+  });
+  // rebuild dots to match current maxPage
+  const dotsWrap=document.getElementById("svcDots");
+  dotsWrap.innerHTML="";
+  for(let i=0;i<=maxPage;i++){
+    const d=document.createElement("div");
+    d.className="svc-dot"+(i===svcPage?" active":"");
+    d.onclick=(()=>{const p=i;return()=>svcGoTo(p);})();
+    dotsWrap.appendChild(d);
+  }
+  document.getElementById("svcPrev").disabled=svcPage===0;
+  document.getElementById("svcNext").disabled=svcPage===maxPage;
+}
+// init
+renderSvcSlide();
+window.addEventListener("resize",()=>{svcPage=0;renderSvcSlide();});
+
+/* PROJECTS OVERLAY */
+function openProjOverlay(){
+  const o=document.getElementById("projOverlay");
+  o.classList.add("open");
+  document.body.style.overflow="hidden";
+  document.querySelectorAll(".ov-card").forEach((c,i)=>{
+    c.style.animation="none";
+    c.offsetHeight;
+    c.style.animation="overlayIn .4s ease "+(i*.06)+"s both";
+  });
+}
+function closeProjOverlay(){
+  document.getElementById("projOverlay").classList.remove("open");
+  document.body.style.overflow="";
+}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeProjOverlay();closeDrawer();}});
+
+/* EXPERIENCE hover — random color, dot on line changes color too */
+const TL_COLORS=["#e53e3e","#3182ce","#38a169"];
+function tlHover(item,on){
+  const title=item.querySelector(".tl-title");
+  const dot=item.querySelector(".tl-dot");
+  if(on){
+    const c=TL_COLORS[Math.floor(Math.random()*TL_COLORS.length)];
+    item._tlColor=c;
+    title.style.color=c;
+    dot.style.background=c;
+    dot.style.boxShadow="0 0 0 2px "+c;
+  }else{
+    title.style.color="";
+    dot.style.background="";
+    dot.style.boxShadow="";
+    item._tlColor=null;
+  }
+}
+
+/* PROJECT CARDS — GitHub btn random color on hover */
+document.querySelectorAll(".proj-card").forEach(card=>{
+  const ghBtn=card.querySelector(".gh-btn");
+  if(!ghBtn)return;
+  card.addEventListener("mouseenter",()=>{
+    const cls=["gh-red","gh-blue","gh-green"];
+    ghBtn.classList.remove(...cls);
+  });
+  ghBtn.addEventListener("mouseenter",()=>{
+    const cls=["gh-red","gh-blue","gh-green"];
+    ghBtn.classList.remove(...cls);
+    ghBtn.classList.add(cls[Math.floor(Math.random()*cls.length)]);
+  });
+  ghBtn.addEventListener("mouseleave",()=>{
+    ghBtn.classList.remove("gh-red","gh-blue","gh-green");
+  });
+});
+
+/* TIMELINE DOTTED DRAW */
+(function(){
+  const wrap=document.getElementById("tlWrap");
+  if(!wrap)return;
+  new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting)return;
+      const svg=document.getElementById("tlSvg"),list=document.getElementById("tlList"),h=list.offsetHeight;
+      svg.setAttribute("height",h);
+      svg.querySelector(".tl-line-bg").setAttribute("y2",h);
+      const anim=document.getElementById("tlAnim");
+      anim.setAttribute("y2",h);
+      // Initial draw-in then loop
+      anim.style.strokeDasharray="4 6";
+      anim.style.strokeDashoffset=h;
+      requestAnimationFrame(()=>{
+        anim.style.transition="stroke-dashoffset 2.4s cubic-bezier(.4,0,.2,1)";
+        anim.style.strokeDashoffset="0";
+        setTimeout(()=>{
+          anim.style.transition="";
+          anim.style.animation="dashFlow 0.7s linear infinite";
+        },2500);
+      });
+      [0,1,2].forEach(i=>{setTimeout(()=>{const d=document.getElementById("dot"+i);if(d)d.classList.add("pop");},350+i*450);});
+    });
+  },{threshold:.15}).observe(wrap);
+})();
+
+/* ANCHOR SCROLL */
+document.querySelectorAll("a[href^='#']").forEach(a=>{
+  a.addEventListener("click",e=>{
+    const t=document.querySelector(a.getAttribute("href"));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth",block:"start"});}
+  });
+});
+</script>
+</body>
+</html>
