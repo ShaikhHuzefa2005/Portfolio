@@ -269,3 +269,34 @@ document.querySelectorAll("a[href^='#']").forEach(a => {
     if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
+
+/* ═══════ DARK MODE TOGGLE ═══════ */
+(function initDarkMode() {
+  const html = document.documentElement;
+  const btn = document.getElementById('darkToggle');
+  if (!btn) return;
+
+  // Check saved preference, then system preference
+  const saved = localStorage.getItem('theme');
+  const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDark = saved ? saved === 'dark' : systemDark;
+
+  function applyTheme(dark) {
+    html.setAttribute('data-theme', dark ? 'dark' : 'light');
+    btn.textContent = dark ? '☀️' : '🌙';
+    btn.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+  }
+
+  applyTheme(isDark);
+
+  btn.addEventListener('click', () => {
+    const currentlyDark = html.getAttribute('data-theme') === 'dark';
+    applyTheme(!currentlyDark);
+  });
+
+  // Listen for system changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) applyTheme(e.matches);
+  });
+})();
