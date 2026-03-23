@@ -11,34 +11,76 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<!-- ════ LOADER ════ -->
+<div id="loader">
+  <div class="ldr-blob"></div>
+  <div class="ldr-panel">
+    <div class="ldr-avatar-wrap">
+      <img src="assets/user8.png" alt="Huzefa" class="ldr-avatar">
+    </div>
+    <div class="ldr-name">
+      <span class="ldr-l0">H</span><span class="ldr-l1">U</span><span class="ldr-l2">Z</span><span class="ldr-l3">E</span><span class="ldr-l4">F</span><span class="ldr-l5">A</span>
+    </div>
+    <div class="ldr-role">Full Stack Developer</div>
+
+  </div>
+  <div class="ldr-hint" id="ldrHint">
+    <div class="ldr-hint-text">Swipe up to explore</div>
+    <div class="ldr-hint-arrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+    </div>
+  </div>
+</div>
+
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
-<!-- DRAWER OVERLAY -->
-<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<!-- FULL-SCREEN MENU -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
 <div class="drawer" id="drawer">
+  <!-- top bar -->
   <div class="drawer-head">
-    <span class="drawer-logo"><b>Port</b>folio</span>
+    <div class="drawer-head-left">
+      <img src="user.png" alt="Huzefa" class="drawer-avatar">
+      <div>
+        <div class="drawer-head-name">Huzefa Shaikh</div>
+        <div class="drawer-head-role">Full Stack Developer</div>
+      </div>
+    </div>
     <button class="drawer-close" onclick="closeDrawer()">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
+  <!-- big nav links -->
   <nav class="drawer-nav">
-    <a href="#about" class="drawer-link" onclick="closeDrawer()">About <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    <a href="#skills" class="drawer-link" onclick="closeDrawer()">Skills <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    <a href="#services" class="drawer-link" onclick="closeDrawer()">Services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    <a href="#projects" class="drawer-link" onclick="closeDrawer()">Projects <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    <a href="#experience" class="drawer-link" onclick="closeDrawer()">Experience <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    <a href="#contact" class="drawer-link" onclick="closeDrawer()">Contact <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="#about"      class="drawer-link"><span class="drawer-link-dot"></span><span class="drawer-link-text">About</span><span class="drawer-link-num">01</span></a>
+    <a href="#skills"     class="drawer-link"><span class="drawer-link-dot"></span><span class="drawer-link-text">Skills</span><span class="drawer-link-num">02</span></a>
+    <a href="#services"   class="drawer-link"><span class="drawer-link-dot"></span><span class="drawer-link-text">Services</span><span class="drawer-link-num">03</span></a>
+    <a href="#projects"   class="drawer-link"><span class="drawer-link-dot"></span><span class="drawer-link-text">Projects</span><span class="drawer-link-num">04</span></a>
+    <a href="#experience" class="drawer-link"><span class="drawer-link-dot"></span><span class="drawer-link-text">Experience</span><span class="drawer-link-num">05</span></a>
+    <a href="#contact"    class="drawer-link"><span class="drawer-link-dot"></span><span class="drawer-link-text">Contact</span><span class="drawer-link-num">06</span></a>
   </nav>
+
+  <!-- bottom -->
   <div class="drawer-foot">
-    <a href="#contact" class="drawer-cv" onclick="closeDrawer()">
+    <a href="#contact" class="drawer-cta" onclick="closeDrawer()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       Let's Connect
-      <svg style="display:inline;vertical-align:middle;margin-left:6px" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
     </a>
+    <div class="drawer-socials">
+      <a href="https://github.com/ShaikhHuzefa2005" target="_blank" class="drawer-social-btn" title="GitHub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <a href="mailto:huzefasadk20@gmail.com" class="drawer-social-btn" title="Email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/huzefaaasadk" target="_blank" class="drawer-social-btn" title="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -52,7 +94,10 @@
     <div class="nav-right">
       <a href="assets/Huzefa_Shaikh_Resume_3-26.pdf" class="nav-cv" download">Download CV <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
       <button class="menu-btn" id="menuBtn" onclick="toggleDrawer()" aria-label="Menu">
-        <span></span><span></span><span></span>
+        <div class="menu-btn-dots">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <span class="menu-btn-label">MENU</span>
       </button>
     </div>
   </nav>
@@ -62,16 +107,17 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
+  <div class="bubbles"><div class="bubble" style="width:220px;height:220px;top:-10%;right:5%;animation-duration:14s;animation-delay:-3s;background:var(--light);opacity:.5;"></div><div class="bubble" style="width:140px;height:140px;top:60%;left:-3%;animation-duration:10s;animation-delay:-6s;background:var(--cream);opacity:.6;"></div><div class="bubble" style="width:80px;height:80px;top:80%;right:2%;animation-duration:8s;animation-delay:-1s;background:var(--light);opacity:.7;"></div></div>
   <div class="hero-left">
-    <h1>HUZEFA SHAIKH<span class="h1-sub">Full Stack Developer</span></h1>
+    <h1 id="heroName"><span class="hn-letter" data-i="0">H</span><span class="hn-letter" data-i="1">U</span><span class="hn-letter" data-i="2">Z</span><span class="hn-letter" data-i="3">E</span><span class="hn-letter" data-i="4">F</span><span class="hn-letter" data-i="5">A</span><span class="hn-letter hn-space" style="width:.45em;display:inline-block"> </span><span class="hn-letter" data-i="7">S</span><span class="hn-letter" data-i="8">H</span><span class="hn-letter" data-i="9">A</span><span class="hn-letter" data-i="10">I</span><span class="hn-letter" data-i="11">K</span><span class="hn-letter" data-i="12">H</span><span class="h1-sub">Full Stack Developer</span></h1>
     <p class="hero-sub">I build <span>scalable</span> web apps, end-to-end.</p>
     <p class="hero-desc">Passionate about crafting clean, performant, and user-friendly digital experiences. From REST APIs to pixel-perfect UIs &mdash; I love every layer of the stack.</p>
     <div class="hero-btns">
       <a href="#projects" class="btn-fill">View Projects <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      <a href="#contact" class="btn-outline">Get In Touch</a>
+      <a href="#contact" class="btn-outline" id="gitBtn"><span class="git-letter">G</span><span class="git-letter">e</span><span class="git-letter">t</span><span class="git-letter git-space"> </span><span class="git-letter">I</span><span class="git-letter">n</span><span class="git-letter git-space"> </span><span class="git-letter">T</span><span class="git-letter">o</span><span class="git-letter">u</span><span class="git-letter">c</span><span class="git-letter">h</span></a>
     </div>
   </div>
-  <div class="hero-right"><img src="assets/user1.png" alt="Huzefa character"></div>
+  <div class="hero-right"><img src="assets/user1.png" alt="Huzefa character" id="heroImg"></div>
 </section>
 
 <!-- MARQUEE -->
@@ -102,9 +148,10 @@
 
 <!-- ABOUT -->
 <section id="about">
+  <div class="bubbles"><div class="bubble" style="width:80px;height:80px;top:5%;left:88%;animation-duration:9s;animation-delay:0s;background:var(--cream);"></div><div class="bubble" style="width:50px;height:50px;top:70%;left:92%;animation-duration:7s;animation-delay:-2s;background:var(--light);"></div><div class="bubble" style="width:120px;height:120px;top:-5%;left:2%;animation-duration:12s;animation-delay:-4s;background:var(--light);"></div><div class="bubble" style="width:40px;height:40px;top:55%;left:5%;animation-duration:6s;animation-delay:-1s;background:var(--cream);"></div></div>
   <div class="about">
     <div class="about-img-wrap reveal-left">
-      <img src="assets/user2.png" alt="Huzefa drinking coffee">
+      <img src="assets/user2.png" alt="Huzefa drinking coffee" id="aboutImg">
       <div class="about-badge">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
         Fueled by coffee
@@ -169,12 +216,13 @@
         </div>
       </div>
     </div>
-    <div class="skills-char reveal-right"><img src="assets/user3.png" alt="Developer character"></div>
+    <div class="skills-char reveal-right"><img src="assets/user3.png" alt="Developer character" id="skillsImg"></div>
   </div>
 </section>
 
 <!-- SERVICES -->
 <div class="services-outer" id="services">
+  <div class="bubbles"><div class="bubble" style="width:100px;height:100px;top:10%;left:85%;animation-duration:10s;animation-delay:0s;background:var(--white);"></div><div class="bubble" style="width:60px;height:60px;top:60%;left:90%;animation-duration:7s;animation-delay:-3s;background:var(--white);"></div><div class="bubble" style="width:140px;height:140px;top:-8%;left:-4%;animation-duration:14s;animation-delay:-2s;background:rgba(255,255,255,.6);"></div><div class="bubble" style="width:45px;height:45px;top:80%;left:3%;animation-duration:6s;animation-delay:-5s;background:var(--white);"></div><div class="bubble" style="width:70px;height:70px;top:30%;left:94%;animation-duration:9s;animation-delay:-1s;background:rgba(255,255,255,.5);"></div></div>
   <div class="services-inner">
     <div class="services-head reveal">
       <span class="section-label">What I Do</span>
@@ -322,12 +370,13 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="projects-outer">
+    <div class="bubbles"><div class="bubble" style="width:90px;height:90px;top:8%;left:92%;animation-duration:10s;animation-delay:-2s;background:var(--light);"></div><div class="bubble" style="width:55px;height:55px;top:75%;left:88%;animation-duration:7s;animation-delay:0s;background:var(--cream);"></div><div class="bubble" style="width:110px;height:110px;top:-6%;left:-3%;animation-duration:13s;animation-delay:-4s;background:var(--light);"></div><div class="bubble" style="width:38px;height:38px;top:50%;left:97%;animation-duration:6s;animation-delay:-1s;background:var(--cream);"></div></div>
     <div class="proj-layout">
       <!-- LEFT: image -->
       <div class="proj-left reveal-left">
         <span class="section-label">What I've Built</span>
         <h2 class="section-title">Featured<br>Projects</h2>
-        <div class="proj-char"><img src="assets/user5.png" alt="Developer reviewing projects"></div>
+        <div class="proj-char" id="projChar"><img src="assets/user5.png" alt="Developer reviewing projects" id="projImg"></div>
         <div class="proj-btns-row" style="margin-top:32px">
           <button class="btn-fill" onclick="openProjOverlay()">More Projects <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
           <a href="https://github.com/ShaikhHuzefa2005" target="_blank" class="btn-outline"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
@@ -459,14 +508,14 @@
         </ul>
       </div>
     </div>
-    <div class="exp-char reveal-right"><img src="assets/user4.png" alt="Developer character"></div>
+    <div class="exp-char reveal-right"><img src="assets/user4.png" alt="Developer character" id="expImg"></div>
   </div>
 </section>
 
 <!-- QUOTE -->
 <div class="quote-outer">
   <div class="quote-inner">
-    <div class="quote-char reveal-left"><img src="assets/user7.png" alt="Developer thinking"></div>
+    <div class="quote-char reveal-left"><img src="assets/user7.png" alt="Developer thinking" id="quoteImg"></div>
     <div class="quote-body reveal-right">
       <blockquote>&#8220;First, solve the problem.<br>Then, write the code.&#8221;</blockquote>
       <p class="quote-author">&mdash; A developer&#8217;s north star, always.</p>
@@ -477,6 +526,7 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-outer">
+    <div class="bubbles"><div class="bubble" style="width:80px;height:80px;top:5%;left:90%;animation-duration:9s;animation-delay:0s;background:var(--light);"></div><div class="bubble" style="width:50px;height:50px;top:65%;left:94%;animation-duration:7s;animation-delay:-2s;background:var(--cream);"></div><div class="bubble" style="width:100px;height:100px;top:-5%;left:-2%;animation-duration:11s;animation-delay:-3s;background:var(--light);"></div><div class="bubble" style="width:42px;height:42px;top:80%;left:3%;animation-duration:6s;animation-delay:-1s;background:var(--cream);"></div></div>
     <div class="reveal" style="margin-bottom:40px;"><span class="section-label">Let&#8217;s Talk</span><h2 class="section-title">Get In Touch</h2></div>
     <div class="contact-layout">
       <!-- LEFT: biscuit cards -->
@@ -522,7 +572,7 @@
       </div>
       <!-- RIGHT: character -->
       <div class="contact-right reveal-right">
-        <div class="contact-char"><img src="assets/user6.png" alt="Huzefa character"></div>
+        <div class="contact-char"><img src="assets/user6.png" alt="Huzefa character" id="contactImg"></div>
       </div>
     </div>
   </div>
@@ -532,6 +582,7 @@
 
 <!-- FOOTER -->
 <footer>
+  <canvas id="footerCanvas" aria-hidden="true"></canvas>
   <div class="footer-inner">
     <div class="footer-top">
       <div><div class="footer-logo"><b>Port</b>folio</div><p class="footer-tag">Huzefa Shaikh &mdash; Full Stack Developer building clean, scalable web applications.</p></div>
@@ -548,192 +599,7 @@
   </div>
 </footer>
 
-<script>
-/* CURSOR */
-const cur=document.getElementById("cursor"),ring=document.getElementById("cursorRing");
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;cur.style.transform="translate("+(mx-5)+"px,"+(my-5)+"px)";});
-(function animR(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.transform="translate("+(rx-18)+"px,"+(ry-18)+"px)";requestAnimationFrame(animR);})();
-document.querySelectorAll("a,button,.proj-card,.svc-card,.biscuit,.skill-item").forEach(el=>{
-  el.addEventListener("mouseenter",()=>document.body.classList.add("hovering"));
-  el.addEventListener("mouseleave",()=>document.body.classList.remove("hovering"));
-});
-
-/* BACK TO TOP */
-const bt=document.getElementById("back-top");
-window.addEventListener("scroll",()=>bt.classList.toggle("show",window.scrollY>300));
-
-/* REVEAL */
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target);}});},{threshold:.1});
-document.querySelectorAll(".reveal,.reveal-left,.reveal-right").forEach(el=>obs.observe(el));
-
-/* DRAWER */
-function toggleDrawer(){
-  const d=document.getElementById("drawer"),o=document.getElementById("drawerOverlay"),b=document.getElementById("menuBtn");
-  const open=d.classList.toggle("open");
-  o.classList.toggle("open",open);
-  b.classList.toggle("open",open);
-  document.body.style.overflow=open?"hidden":"";
-}
-function closeDrawer(){
-  document.getElementById("drawer").classList.remove("open");
-  document.getElementById("drawerOverlay").classList.remove("open");
-  document.getElementById("menuBtn").classList.remove("open");
-  document.body.style.overflow="";
-}
-document.querySelectorAll(".drawer-link").forEach(a=>{
-  a.addEventListener("click",e=>{
-    const href=a.getAttribute("href");
-    if(href&&href.startsWith("#")){
-      e.preventDefault();
-      closeDrawer();
-      setTimeout(()=>{const t=document.querySelector(href);if(t)t.scrollIntoView({behavior:"smooth",block:"start"});},320);
-    }
-  });
-});
-
-/* SKILL TABS */
-document.querySelectorAll(".s-tab").forEach(t=>{
-  t.addEventListener("click",()=>{
-    document.querySelectorAll(".s-tab").forEach(x=>x.classList.remove("active"));
-    document.querySelectorAll(".s-tab-panel").forEach(x=>x.classList.remove("active"));
-    t.classList.add("active");
-    const panel=document.getElementById(t.dataset.panel);
-    panel.classList.add("active");
-    setTimeout(()=>animBars(panel),60);
-  });
-});
-function animBars(panel){panel.querySelectorAll(".sk-bar").forEach(b=>{b.style.width=b.dataset.w+"%";});}
-new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){animBars(document.querySelector(".s-tab-panel.active"));}});},{threshold:.2}).observe(document.getElementById("skills"));
-
-/* SERVICES — grid-based paging, show 3 cards at a time */
-function toggleSvc(card){
-  const wasActive=card.classList.contains("active");
-  document.querySelectorAll(".svc-card").forEach(c=>c.classList.remove("active"));
-  if(!wasActive) card.classList.add("active");
-}
-
-let svcPage=0;
-function getSvcPerPage(){return window.innerWidth<=960?1:3;}
-function svcSlide(dir){
-  const maxPage=Math.ceil(document.querySelectorAll(".svc-card").length/getSvcPerPage())-1;
-  svcPage=Math.max(0,Math.min(maxPage,svcPage+dir));
-  renderSvcSlide();
-}
-function svcGoTo(page){svcPage=page;renderSvcSlide();}
-function renderSvcSlide(){
-  const perPage=getSvcPerPage();
-  const cards=Array.from(document.querySelectorAll(".svc-card"));
-  const maxPage=Math.ceil(cards.length/perPage)-1;
-  const start=svcPage*perPage;
-  cards.forEach((c,i)=>{
-    c.style.display=(i>=start&&i<start+perPage)?"flex":"none";
-  });
-  // rebuild dots to match current maxPage
-  const dotsWrap=document.getElementById("svcDots");
-  dotsWrap.innerHTML="";
-  for(let i=0;i<=maxPage;i++){
-    const d=document.createElement("div");
-    d.className="svc-dot"+(i===svcPage?" active":"");
-    d.onclick=(()=>{const p=i;return()=>svcGoTo(p);})();
-    dotsWrap.appendChild(d);
-  }
-  document.getElementById("svcPrev").disabled=svcPage===0;
-  document.getElementById("svcNext").disabled=svcPage===maxPage;
-}
-// init
-renderSvcSlide();
-window.addEventListener("resize",()=>{svcPage=0;renderSvcSlide();});
-
-/* PROJECTS OVERLAY */
-function openProjOverlay(){
-  const o=document.getElementById("projOverlay");
-  o.classList.add("open");
-  document.body.style.overflow="hidden";
-  document.querySelectorAll(".ov-card").forEach((c,i)=>{
-    c.style.animation="none";
-    c.offsetHeight;
-    c.style.animation="overlayIn .4s ease "+(i*.06)+"s both";
-  });
-}
-function closeProjOverlay(){
-  document.getElementById("projOverlay").classList.remove("open");
-  document.body.style.overflow="";
-}
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeProjOverlay();closeDrawer();}});
-
-/* EXPERIENCE hover — random color, dot on line changes color too */
-const TL_COLORS=["#e53e3e","#3182ce","#38a169"];
-function tlHover(item,on){
-  const title=item.querySelector(".tl-title");
-  const dot=item.querySelector(".tl-dot");
-  if(on){
-    const c=TL_COLORS[Math.floor(Math.random()*TL_COLORS.length)];
-    item._tlColor=c;
-    title.style.color=c;
-    dot.style.background=c;
-    dot.style.boxShadow="0 0 0 2px "+c;
-  }else{
-    title.style.color="";
-    dot.style.background="";
-    dot.style.boxShadow="";
-    item._tlColor=null;
-  }
-}
-
-/* PROJECT CARDS — GitHub btn random color on hover */
-document.querySelectorAll(".proj-card").forEach(card=>{
-  const ghBtn=card.querySelector(".gh-btn");
-  if(!ghBtn)return;
-  card.addEventListener("mouseenter",()=>{
-    const cls=["gh-red","gh-blue","gh-green"];
-    ghBtn.classList.remove(...cls);
-  });
-  ghBtn.addEventListener("mouseenter",()=>{
-    const cls=["gh-red","gh-blue","gh-green"];
-    ghBtn.classList.remove(...cls);
-    ghBtn.classList.add(cls[Math.floor(Math.random()*cls.length)]);
-  });
-  ghBtn.addEventListener("mouseleave",()=>{
-    ghBtn.classList.remove("gh-red","gh-blue","gh-green");
-  });
-});
-
-/* TIMELINE DOTTED DRAW */
-(function(){
-  const wrap=document.getElementById("tlWrap");
-  if(!wrap)return;
-  new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(!e.isIntersecting)return;
-      const svg=document.getElementById("tlSvg"),list=document.getElementById("tlList"),h=list.offsetHeight;
-      svg.setAttribute("height",h);
-      svg.querySelector(".tl-line-bg").setAttribute("y2",h);
-      const anim=document.getElementById("tlAnim");
-      anim.setAttribute("y2",h);
-      // Initial draw-in then loop
-      anim.style.strokeDasharray="4 6";
-      anim.style.strokeDashoffset=h;
-      requestAnimationFrame(()=>{
-        anim.style.transition="stroke-dashoffset 2.4s cubic-bezier(.4,0,.2,1)";
-        anim.style.strokeDashoffset="0";
-        setTimeout(()=>{
-          anim.style.transition="";
-          anim.style.animation="dashFlow 0.7s linear infinite";
-        },2500);
-      });
-      [0,1,2].forEach(i=>{setTimeout(()=>{const d=document.getElementById("dot"+i);if(d)d.classList.add("pop");},350+i*450);});
-    });
-  },{threshold:.15}).observe(wrap);
-})();
-
-/* ANCHOR SCROLL */
-document.querySelectorAll("a[href^='#']").forEach(a=>{
-  a.addEventListener("click",e=>{
-    const t=document.querySelector(a.getAttribute("href"));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth",block:"start"});}
-  });
-});
-</script>
+<script src="script.js"></script>
+<script src="anim.js"></script>
 </body>
 </html>
